@@ -67,11 +67,12 @@ function onSelectBreed(event) {
 }
 
 function onFetchError() {
-    setLoadingState(true);
-    Notify.failure(errorMessage.textContent, {
+    setErrorState(true);
+    errorMessage.textContent = "Oops! Something went wrong! Try reloading the page!";
+    Notiflix.Notify.failure(errorMessage.textContent, {
         position: 'center-center',
         timeout: 5000,
         width: '400px',
         fontSize: '24px'
     });
-};
+}
